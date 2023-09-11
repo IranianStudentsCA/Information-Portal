@@ -112,18 +112,20 @@ main.container {
   align-items: center;
   margin: 1rem 0;
   position: relative;
+  padding-top: 32px;
 }
 .main-title h1 {
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-transform: capitalize;
   margin-bottom: 0;
+  text-align: center;
 }
 .main-title .back-to-IP {
   position: absolute;
   left: 0;
+  top: 0;
   display: flex;
   align-items: center;
   font-family: "Poppins", sans-serif;
@@ -138,6 +140,7 @@ main.container {
 .main-title .logo {
   position: absolute;
   right: 0;
+  top: -12px;
 }
 .main-title .logo img {
   height: 44px;
@@ -148,9 +151,10 @@ main.container {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 12px 0px;
+  padding: 8px 0px 0px;
   background-color: #1a5460;
   margin-bottom: 0;
+  border-bottom: 1px solid #f7e3a3;
 }
 .tab-navigation .container {
   justify-content: center;
@@ -169,23 +173,29 @@ main.container {
   font-style: normal;
   line-height: normal;
   font-weight: 300;
-  text-transform: capitalize;
   width: auto;
   height: 32px;
-  padding: 0;
+  padding: 0 8px;
+  border-radius: 5px 5px 0 0;
+  padding-top: 5px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -1px;
 }
 .tab-navigation .nav .nav-link.active {
   display: flex;
-  padding: 0 12px;
   justify-content: center;
   align-items: center;
   color: #1a5460;
-  background-color: #f7e3a3;
-  border-radius: 5px;
+  background-color: #f2f2f2;
   font-weight: 500;
+  border-left: 1px solid #f7e3a3;
+  border-top: 1px solid #f7e3a3;
+  border-right: 1px solid #f7e3a3;
+  border-bottom: 1px solid #f2f2f2;
 }
 .tab-navigation .nav .nav-link.active:hover, .tab-navigation .nav .nav-link.active:focus, .tab-navigation .nav .nav-link.active:active {
-  background-color: #f7e3a3;
+  background-color: #f2f2f2;
 }
 
 .title-lvl1 {
@@ -234,6 +244,7 @@ main.container {
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   margin-bottom: 2rem;
+  grid-template-columns: repeat(2, 1fr);
 }
 .tab-content .tab-outlines .outline-container {
   display: flex;
@@ -592,17 +603,6 @@ footer .sponsor a {
     padding-top: 3rem;
     scroll-margin-top: 50px;
   }
-  .main-title h1 {
-    font-size: 48px;
-  }
-  .main-title .logo {
-    position: absolute;
-    right: 0;
-  }
-  .main-title .logo img {
-    height: 65px;
-    width: 65px;
-  }
   .tab-content #pills-bank .tab-outlines {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -620,9 +620,12 @@ footer .sponsor a {
     gap: 0;
   }
   .tab-navigation .nav .nav-link {
-    width: 150px;
+    min-width: 150px;
     height: 50px;
-    font-size: 18px;
+    font-size: 16px;
+    padding-right: 12px;
+    padding-left: 12px;
+    letter-spacing: 0.25px;
   }
 }
 @media (min-width: 991px) {
@@ -640,9 +643,6 @@ footer .sponsor a {
   .tab-navigation .nav .nav-link:hover, .tab-navigation .nav .nav-link:focus, .tab-navigation .nav .nav-link:active {
     background-color: rgba(247, 227, 163, 0.2);
   }
-  .tab-navigation.fix-style {
-    padding: 8px 0;
-  }
   .tab-navigation.fix-style .nav .nav-link {
     font-size: 16px;
   }
@@ -651,6 +651,14 @@ footer .sponsor a {
   }
   .tab-navigation .container {
     justify-content: center;
+  }
+  .main-title .back-to-IP {
+    top: unset;
+  }
+  .main-title .logo {
+    position: absolute;
+    right: 0;
+    top: unset;
   }
   .tab-content .tab-outlines {
     grid-template-columns: repeat(3, 1fr);
